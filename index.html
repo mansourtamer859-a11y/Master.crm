@@ -2,327 +2,60 @@
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07111f" />
     <title>Master.crm</title>
     <meta name="description" content="Master.crm - CRM and business management system for the Egyptian market" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body dir="rtl">
     <div id="loginScreen" class="login-screen">
       <div class="login-card">
         <div class="brand-block">
           <div class="brand-icon">M</div>
-          <div>
-            <div class="eyebrow">Master.crm</div>
-            <h1 data-i18n="loginTitle">بوابة الوصول الآمن</h1>
-          </div>
+          <div><div class="eyebrow">Master.crm</div><h1 data-i18n="loginTitle">بوابة الوصول الآمن</h1></div>
         </div>
-
-        <div class="login-meta">
-          <span data-i18n="adminLabel">مدير النظام: Master Admin</span>
-          <span class="status-dot"></span>
-        </div>
-
+        <div class="login-meta"><span data-i18n="adminLabel">مدير النظام: Master Admin</span><span class="status-dot"></span></div>
         <label class="field-label" for="pinInput" data-i18n="pinLabel">أدخل الرقم السري</label>
         <input id="pinInput" type="password" inputmode="numeric" maxlength="6" placeholder="000000" />
         <button id="loginBtn" class="primary-btn" data-i18n="loginBtn">دخول النظام</button>
         <p id="loginError" class="login-error" aria-live="polite"></p>
-        <div class="login-footer">
-          <small data-i18n="supportText">نسخة تجريبية أولية - السوق المصري</small>
-        </div>
+        <div class="login-footer"><small data-i18n="supportText">نسخة تجريبية أولية - السوق المصري</small></div>
       </div>
     </div>
 
     <div id="appShell" class="app-shell hidden">
       <aside class="sidebar">
-        <div class="app-logo">
-          <div class="brand-icon small">M</div>
-          <div>
-            <strong>Master.crm</strong>
-            <small data-i18n="crmSubtitle">CRM + Business Suite</small>
-          </div>
-        </div>
-
+        <div class="app-logo"><div class="brand-icon small">M</div><div><strong>Master.crm</strong><small data-i18n="crmSubtitle">CRM + Business Suite</small></div></div>
         <nav class="nav-links">
-          <button class="nav-item active" data-section="dashboard">
-            <span>📊</span><span data-i18n="navDashboard">لوحة التحكم</span>
-          </button>
-          <button class="nav-item" data-section="customers">
-            <span>👥</span><span data-i18n="navCustomers">العملاء</span>
-          </button>
-          <button class="nav-item" data-section="invoices">
-            <span>🧾</span><span data-i18n="navInvoices">الفواتير</span>
-          </button>
-          <button class="nav-item" data-section="branches">
-            <span>🏢</span><span data-i18n="navBranches">الفروع</span>
-          </button>
-          <button class="nav-item" data-section="permissions">
-            <span>🔐</span><span data-i18n="navPermissions">الصلاحيات</span>
-          </button>
-          <button class="nav-item" data-section="integrations">
-            <span>🔗</span><span data-i18n="navIntegrations">التكاملات</span>
-          </button>
+          <button class="nav-item active" data-section="dashboard"><span>📊</span><span data-i18n="navDashboard">لوحة التحكم</span></button>
+          <button class="nav-item" data-section="customers"><span>👥</span><span data-i18n="navCustomers">العملاء</span></button>
+          <button class="nav-item" data-section="invoices"><span>🧾</span><span data-i18n="navInvoices">الفواتير</span></button>
+          <button class="nav-item" data-section="branches"><span>🏢</span><span data-i18n="navBranches">الفروع</span></button>
+          <button class="nav-item" data-section="permissions"><span>🔐</span><span data-i18n="navPermissions">الصلاحيات</span></button>
+          <button class="nav-item" data-section="integrations"><span>🔗</span><span data-i18n="navIntegrations">التكاملات</span></button>
         </nav>
       </aside>
-
       <main class="main-panel">
-        <header class="topbar">
-          <div>
-            <h2 data-i18n="topTitle">نظرة عامة على الأداء</h2>
-          </div>
-          <div class="topbar-actions">
-            <button id="langToggle" class="ghost-btn">EN</button>
-            <button id="logoutBtn" class="ghost-btn danger" data-i18n="logoutBtn">تسجيل الخروج</button>
-          </div>
-        </header>
-
+        <header class="topbar"><div><h2 data-i18n="topTitle">نظرة عامة على الأداء</h2></div><div class="topbar-actions"><button id="langToggle" class="ghost-btn">EN</button><button id="logoutBtn" class="ghost-btn danger" data-i18n="logoutBtn">تسجيل الخروج</button></div></header>
         <section id="dashboard" class="content-section active">
-          <div class="kpi-grid">
-            <article class="kpi-card accent-blue">
-              <span class="kpi-title" data-i18n="totalSales">إجمالي المبيعات</span>
-              <strong id="totalSalesValue">EGP 0</strong>
-              <small data-i18n="monthlyGrowth">+18.4% مقارنة بالشهر الماضي</small>
-            </article>
-            <article class="kpi-card accent-green">
-              <span class="kpi-title" data-i18n="newCustomers">عدد العملاء الجدد</span>
-              <strong id="newCustomersValue">0</strong>
-              <small data-i18n="activeThisMonth">نشط هذا الشهر</small>
-            </article>
-            <article class="kpi-card accent-orange">
-              <span class="kpi-title" data-i18n="paidInvoices">الفواتير المدفوعة</span>
-              <strong id="paidInvoicesValue">0</strong>
-              <small data-i18n="collectionRate">معدل التحصيل 78%</small>
-            </article>
-            <article class="kpi-card accent-purple">
-              <span class="kpi-title" data-i18n="followUps">المتابعات</span>
-              <strong id="followUpsValue">0</strong>
-              <small data-i18n="needAttention">تحتاج متابعة</small>
-            </article>
-          </div>
-
-          <div class="analytics-grid">
-            <div class="panel">
-              <div class="panel-head">
-                <h3 data-i18n="salesTrend">اتجاه المبيعات</h3>
-                <span class="badge success" data-i18n="egpOnly">EGP فقط</span>
-              </div>
-              <div class="bars-chart" id="salesChart"></div>
-            </div>
-
-            <div class="panel">
-              <div class="panel-head">
-                <h3 data-i18n="statusBreakdown">توزيع الحالات</h3>
-              </div>
-              <div class="donut-wrap">
-                <div class="donut-chart">
-                  <div class="donut-inner">
-                    <strong id="customerStatusTotal">0</strong>
-                    <small data-i18n="customers">عملاء</small>
-                  </div>
-                </div>
-                <ul class="legend-list" id="customerLegend"></ul>
-              </div>
-            </div>
-          </div>
+          <div class="kpi-grid"><article class="kpi-card accent-blue"><span class="kpi-title" data-i18n="totalSales">إجمالي المبيعات</span><strong id="totalSalesValue">EGP 0</strong><small data-i18n="monthlyGrowth">+18.4% مقارنة بالشهر الماضي</small></article><article class="kpi-card accent-green"><span class="kpi-title" data-i18n="newCustomers">عدد العملاء الجدد</span><strong id="newCustomersValue">0</strong><small data-i18n="activeThisMonth">نشط هذا الشهر</small></article><article class="kpi-card accent-orange"><span class="kpi-title" data-i18n="paidInvoices">الفواتير المدفوعة</span><strong id="paidInvoicesValue">0</strong><small data-i18n="collectionRate">معدل التحصيل 78%</small></article><article class="kpi-card accent-purple"><span class="kpi-title" data-i18n="followUps">المتابعات</span><strong id="followUpsValue">0</strong><small data-i18n="needAttention">تحتاج متابعة</small></article></div>
+          <div class="analytics-grid"><div class="panel"><div class="panel-head"><h3 data-i18n="salesTrend">اتجاه المبيعات</h3><span class="badge success" data-i18n="egpOnly">EGP فقط</span></div><div class="bars-chart" id="salesChart"></div></div><div class="panel"><div class="panel-head"><h3 data-i18n="statusBreakdown">توزيع الحالات</h3></div><div class="donut-wrap"><div class="donut-chart"><div class="donut-inner"><strong id="customerStatusTotal">0</strong><small data-i18n="customers">عملاء</small></div></div><ul class="legend-list" id="customerLegend"></ul></div></div></div>
         </section>
 
-        <section id="customers" class="content-section">
-          <div class="section-header">
-            <div>
-              <h3 data-i18n="customersTitle">إدارة العملاء</h3>
-            </div>
-            <button id="addCustomerBtn" class="primary-btn" data-i18n="addCustomer">إضافة عميل</button>
-          </div>
+        <section id="customers" class="content-section"><div class="section-header"><h3 data-i18n="customersTitle">إدارة العملاء</h3><button id="addCustomerBtn" class="primary-btn compact" data-i18n="addCustomer">إضافة عميل</button></div><div class="panel form-panel"><h4 data-i18n="customerFormTitle">بيانات العميل</h4><form id="customerForm" class="form-grid"><input type="hidden" id="customerId" /><label><span data-i18n="customerName">الاسم</span><input id="customerName" required /></label><label><span data-i18n="customerPhone">رقم الهاتف</span><input id="customerPhone" required /></label><label><span data-i18n="customerCompany">الشركة</span><input id="customerCompany" /></label><label><span data-i18n="customerStatus">الحالة</span><select id="customerStatus"><option value="interested" data-i18n="statusInterested">مهتم</option><option value="sold" data-i18n="statusSold">تم البيع</option><option value="follow_up" data-i18n="statusFollowUp">متابعة</option></select></label><div class="form-actions"><button type="submit" class="primary-btn compact" data-i18n="saveCustomer">حفظ العميل</button><button type="button" class="ghost-btn" id="cancelCustomer" data-i18n="cancelBtn">إلغاء</button></div></form></div><div class="panel table-panel"><table><thead><tr><th data-i18n="tableCustomerName">الاسم</th><th data-i18n="tablePhone">الهاتف</th><th data-i18n="tableCompany">الشركة</th><th data-i18n="tableStatus">الحالة</th><th data-i18n="tableActions">الإجراءات</th></tr></thead><tbody id="customersTable"></tbody></table></div></section>
 
-          <div class="panel form-panel">
-            <h4 data-i18n="customerFormTitle">بيانات العميل</h4>
-            <form id="customerForm" class="form-grid">
-              <input type="hidden" id="customerId" />
-              <label>
-                <span data-i18n="customerName">الاسم</span>
-                <input id="customerName" required />
-              </label>
-              <label>
-                <span data-i18n="customerPhone">رقم الهاتف</span>
-                <input id="customerPhone" required />
-              </label>
-              <label>
-                <span data-i18n="customerCompany">الشركة</span>
-                <input id="customerCompany" />
-              </label>
-              <label>
-                <span data-i18n="customerStatus">الحالة</span>
-                <select id="customerStatus">
-                  <option value="interested" data-i18n="statusInterested">مهتم</option>
-                  <option value="sold" data-i18n="statusSold">تم البيع</option>
-                  <option value="follow_up" data-i18n="statusFollowUp">متابعة</option>
-                </select>
-              </label>
-              <div class="form-actions">
-                <button type="submit" class="primary-btn" data-i18n="saveCustomer">حفظ العميل</button>
-                <button type="button" class="ghost-btn" id="cancelCustomer" data-i18n="cancelBtn">إلغاء</button>
-              </div>
-            </form>
-          </div>
+        <section id="invoices" class="content-section"><div class="section-header"><h3 data-i18n="invoicesTitle">الفواتير</h3><button id="exportInvoicesBtn" class="primary-btn compact" data-i18n="exportBtn">تصدير CSV</button></div><div class="panel form-panel"><h4 data-i18n="invoiceFormTitle">بيانات الفاتورة</h4><form id="invoiceForm" class="form-grid invoice-grid"><input type="hidden" id="invoiceId" /><label><span data-i18n="invoiceNumber">رقم الفاتورة</span><input id="invoiceNumber" required /></label><label><span data-i18n="invoiceDate">تاريخ الإصدار</span><input id="invoiceDate" type="date" required /></label><label><span data-i18n="taxDate">تاريخ الضريبة</span><input id="taxDate" type="date" required /></label><label><span data-i18n="customerSelect">العميل</span><select id="customerSelect"></select></label><label><span data-i18n="invoiceTotal">إجمالي الفاتورة (EGP)</span><input id="invoiceTotal" type="number" step="0.01" min="0" required /></label><label><span data-i18n="paymentStatus">حالة الدفع</span><select id="paymentStatus"><option value="paid" data-i18n="paymentPaid">مدفوع</option><option value="pending" data-i18n="paymentPending">قيد الدفع</option><option value="partial" data-i18n="paymentPartial">مدفوع جزئيًا</option></select></label><label><span data-i18n="etaBuyerName">اسم المشتري</span><input id="etaBuyerName" /></label><label><span data-i18n="etaTaxId">الرقم الضريبي</span><input id="etaTaxId" /></label><label><span data-i18n="waReady">جاهزية WhatsApp API</span><select id="waReady"><option value="true" data-i18n="readyYes">نعم</option><option value="false" data-i18n="readyNo">لا</option></select></label><div class="form-actions full-span"><button type="submit" class="primary-btn compact" data-i18n="saveInvoice">حفظ الفاتورة</button><button type="button" class="ghost-btn" id="cancelInvoice" data-i18n="cancelBtn">إلغاء</button></div></form></div><div class="panel table-panel"><table><thead><tr><th data-i18n="invoiceNo">رقم الفاتورة</th><th data-i18n="invoiceCustomer">العميل</th><th data-i18n="invoiceTotalHeader">الإجمالي</th><th data-i18n="invoiceTaxDate">تاريخ الضريبة</th><th data-i18n="invoicePaymentStatus">حالة الدفع</th><th data-i18n="tableActions">الإجراءات</th></tr></thead><tbody id="invoicesTable"></tbody></table></div></section>
 
-          <div class="panel table-panel">
-            <table>
-              <thead>
-                <tr>
-                  <th data-i18n="tableCustomerName">الاسم</th>
-                  <th data-i18n="tablePhone">الهاتف</th>
-                  <th data-i18n="tableCompany">الشركة</th>
-                  <th data-i18n="tableStatus">الحالة</th>
-                  <th data-i18n="tableActions">الإجراءات</th>
-                </tr>
-              </thead>
-              <tbody id="customersTable"></tbody>
-            </table>
-          </div>
-        </section>
-
-        <section id="invoices" class="content-section">
-          <div class="section-header">
-            <div>
-              <h3 data-i18n="invoicesTitle">الفواتير</h3>
-            </div>
-            <button id="exportInvoicesBtn" class="primary-btn" data-i18n="exportBtn">تصدير CSV</button>
-          </div>
-
-          <div class="panel form-panel">
-            <h4 data-i18n="invoiceFormTitle">بيانات الفاتورة</h4>
-            <form id="invoiceForm" class="form-grid invoice-grid">
-              <input type="hidden" id="invoiceId" />
-              <label>
-                <span data-i18n="invoiceNumber">رقم الفاتورة</span>
-                <input id="invoiceNumber" required />
-              </label>
-              <label>
-                <span data-i18n="invoiceDate">تاريخ الإصدار</span>
-                <input id="invoiceDate" type="date" required />
-              </label>
-              <label>
-                <span data-i18n="taxDate">تاريخ الضريبة</span>
-                <input id="taxDate" type="date" required />
-              </label>
-              <label>
-                <span data-i18n="customerSelect">العميل</span>
-                <select id="customerSelect"></select>
-              </label>
-              <label>
-                <span data-i18n="invoiceTotal">إجمالي الفاتورة (EGP)</span>
-                <input id="invoiceTotal" type="number" step="0.01" min="0" required />
-              </label>
-              <label>
-                <span data-i18n="paymentStatus">حالة الدفع</span>
-                <select id="paymentStatus">
-                  <option value="paid" data-i18n="paymentPaid">مدفوع</option>
-                  <option value="pending" data-i18n="paymentPending">قيد الدفع</option>
-                  <option value="partial" data-i18n="paymentPartial">مدفوع جزئيًا</option>
-                </select>
-              </label>
-              <label>
-                <span data-i18n="etaBuyerName">اسم المشتري</span>
-                <input id="etaBuyerName" />
-              </label>
-              <label>
-                <span data-i18n="etaTaxId">الرقم الضريبي</span>
-                <input id="etaTaxId" />
-              </label>
-              <label>
-                <span data-i18n="waReady">جاهزية WhatsApp API</span>
-                <select id="waReady">
-                  <option value="true" data-i18n="readyYes">نعم</option>
-                  <option value="false" data-i18n="readyNo">لا</option>
-                </select>
-              </label>
-              <div class="form-actions full-span">
-                <button type="submit" class="primary-btn" data-i18n="saveInvoice">حفظ الفاتورة</button>
-                <button type="button" class="ghost-btn" id="cancelInvoice" data-i18n="cancelBtn">إلغاء</button>
-              </div>
-            </form>
-          </div>
-
-          <div class="panel table-panel">
-            <table>
-              <thead>
-                <tr>
-                  <th data-i18n="invoiceNo">رقم الفاتورة</th>
-                  <th data-i18n="invoiceCustomer">العميل</th>
-                  <th data-i18n="invoiceTotalHeader">الإجمالي</th>
-                  <th data-i18n="invoiceTaxDate">تاريخ الضريبة</th>
-                  <th data-i18n="invoicePaymentStatus">حالة الدفع</th>
-                  <th data-i18n="tableActions">الإجراءات</th>
-                </tr>
-              </thead>
-              <tbody id="invoicesTable"></tbody>
-            </table>
-          </div>
-        </section>
-
-        <section id="branches" class="content-section">
-          <div class="section-header">
-            <div>
-              <h3 data-i18n="branchesTitle">الفروع والموظفين</h3>
-            </div>
-          </div>
-          <div class="two-column-grid">
-            <div class="panel">
-              <h4 data-i18n="branchListTitle">قائمة الفروع</h4>
-              <ul id="branchesList" class="stack-list"></ul>
-            </div>
-            <div class="panel">
-              <h4 data-i18n="employeeListTitle">الموظفون والصلاحيات</h4>
-              <ul id="employeesList" class="stack-list"></ul>
-            </div>
-          </div>
-        </section>
-
-        <section id="permissions" class="content-section">
-          <div class="section-header">
-            <div>
-              <h3 data-i18n="permissionsTitle">إدارة الصلاحيات</h3>
-            </div>
-          </div>
-          <div class="panel table-panel">
-            <table>
-              <thead>
-                <tr>
-                  <th data-i18n="rolePerson">الموظف</th>
-                  <th data-i18n="roleName">الدور</th>
-                  <th data-i18n="roleAccess">الصلاحيات</th>
-                  <th data-i18n="roleBranch">الفرع</th>
-                </tr>
-              </thead>
-              <tbody id="rolesTable"></tbody>
-            </table>
-          </div>
-        </section>
-
-        <section id="integrations" class="content-section">
-          <div class="section-header">
-            <div>
-              <h3 data-i18n="integrationsTitle">التكاملات المستقبلية</h3>
-            </div>
-          </div>
-          <div class="panel integration-grid">
-            <div class="mini-card">
-              <h4 data-i18n="etaCompliance">مواصفة ETA</h4>
-              <p data-i18n="etaText">مهيأة لتضمين بيانات الفاتورة، الرقم الضريبي، وتاريخ الضريبة وفق متطلبات الفاتورة الإلكترونية المصرية.</p>
-            </div>
-            <div class="mini-card">
-              <h4 data-i18n="whatsappApi">WhatsApp API</h4>
-              <p data-i18n="waText">تم تجهيز حقول الإشعارات، قوالب الرسائل، ومؤشرات الالتزام لدمجها لاحقاً عبر Webhook / API.</p>
-            </div>
-          </div>
-        </section>
+        <section id="branches" class="content-section"><div class="section-header"><h3 data-i18n="branchesTitle">الفروع والموظفين</h3></div><div class="two-column-grid"><div class="panel"><h4 data-i18n="branchListTitle">قائمة الفروع</h4><ul id="branchesList" class="stack-list"></ul></div><div class="panel"><h4 data-i18n="employeeListTitle">الموظفون والصلاحيات</h4><ul id="employeesList" class="stack-list"></ul></div></div></section>
+        <section id="permissions" class="content-section"><div class="section-header"><h3 data-i18n="permissionsTitle">إدارة الصلاحيات</h3></div><div class="panel table-panel"><table><thead><tr><th data-i18n="rolePerson">الموظف</th><th data-i18n="roleName">الدور</th><th data-i18n="roleAccess">الصلاحيات</th><th data-i18n="roleBranch">الفرع</th></tr></thead><tbody id="rolesTable"></tbody></table></div></section>
+        <section id="integrations" class="content-section"><div class="section-header"><h3 data-i18n="integrationsTitle">التكاملات المستقبلية</h3></div><div class="panel integration-grid"><div class="mini-card"><h4 data-i18n="etaCompliance">مواصفة ETA</h4><p data-i18n="etaText">مهيأة لتضمين بيانات الفاتورة، الرقم الضريبي، وتاريخ الضريبة وفق متطلبات الفاتورة الإلكترونية المصرية.</p></div><div class="mini-card"><h4 data-i18n="whatsappApi">WhatsApp API</h4><p data-i18n="waText">تم تجهيز حقول الإشعارات، قوالب الرسائل، ومؤشرات الالتزام لدمجها لاحقاً عبر Webhook / API.</p></div></div></section>
       </main>
     </div>
-
     <script src="app.js"></script>
   </body>
 </html>
-""
